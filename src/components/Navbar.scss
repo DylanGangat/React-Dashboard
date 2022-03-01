@@ -1,0 +1,46 @@
+.primary-header {
+  padding: 1rem 0;
+  border-bottom: 1px solid red;
+
+  .main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    height: 2rem;
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+  }
+
+  .alert-icon {
+    padding-right: 1.5rem;
+    // border-right: 1px solid red;
+  }
+
+  .user-profile {
+    display: flex;
+    align-items: center;
+    padding-left: 1.5rem;
+    border-left: 1px solid red;
+  }
+  .user-profile > * + * {
+      margin-left: .5rem;
+  }
+
+  .profile-image {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .user-details {
+    display: flex;
+    align-items: center;
+  }
+}

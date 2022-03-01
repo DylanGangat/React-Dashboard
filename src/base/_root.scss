@@ -1,0 +1,75 @@
+:root {
+  // colours
+
+  --clr-primary: hsl(251, 17%, 19%);
+  --clr-primary: hsl(0, 0%, 0%);
+
+
+  --clr-secondary: hsl(208, 84%, 52%);
+  --clr-secondaryl-light: hsl(207, 100%, 91%);
+
+  --clr-accent: hsl(169, 79%, 42%);
+  --clr-accent-light: hsl(168, 71%, 95%);
+
+  --clr-base: hsl(0, 0%, 100%);
+
+  --clr-dashboard: hsl(220, 23%, 97%);
+
+  --clr-card-base: hsl(250, 60%, 98%);
+  --clr-card-text: hsl(235, 15%, 47%);
+
+  // font family
+
+  --ff-primary: "Inter", sans-serif;
+
+  // font size
+
+  --text-xs: 0.75rem; /* 12px */
+line-height: 1rem; /* 16px */
+
+--text-sm: 0.875rem; /* 14px */
+line-height: 1.25rem; /* 20px */
+
+--text-base: 1rem; /* 16px */
+line-height: 1.5rem; /* 24px */
+
+--text-lg: 1.125rem; /* 18px */
+line-height: 1.75rem; /* 28px */
+
+--text-xl: 1.25rem; /* 20px */
+line-height: 1.75rem; /* 28px */
+
+--text-2x: 1.5rem; /* 24px */
+line-height: 2rem; /* 32px */
+
+--text-3xl: 1.875rem; /* 30px */
+line-height: 2.25rem; /* 36px */
+
+--text-4xl: 2.25rem; /* 36px */
+
+
+
+  @media (min-width: 50em) {
+    
+  }
+
+  // font weight
+
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-700: 700;
+
+  // border radius
+
+  --border-radius: 10px;
+
+  // headers min height
+
+  --header-height: 4.5rem;
+
+  // animation
+
+  --animation-350: 350ms ease-in;
+  --animation-450: 450ms ease-in;
+  --animation-750: 750ms ease-in;
+}
