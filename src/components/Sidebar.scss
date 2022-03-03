@@ -1,0 +1,63 @@
+.side-bar {
+  color: var(--clr-grey-400);
+
+  @media (min-width: 50em) {
+    padding: 1rem;
+  }
+
+  .nav-list {
+    display: flex;
+    // flex-direction: row;
+    flex-wrap: wrap; // Maybe wont need this because might cause problems on the desktop version
+    justify-content: center;
+
+    @media (min-width: 50em) {
+      justify-content: unset;
+    }
+  }
+
+  .nav-list > * + * {
+    margin-left: 1rem;
+    @media (min-width: 50em) {
+      margin: 0.5rem 0 0 0;
+    }
+  }
+
+  .nav-item {
+    border-radius: var(--border-radius);
+
+    @media (min-width: 50em) {
+      width: 100%;
+    }
+    transition: all var(--animation-350);
+  }
+
+  .nav-item:hover,
+  .nav-item:focus {
+    color: var(--clr-secondary-400);
+    background-color: var(--clr-secondary-300);
+  }
+
+  .nav-item.active {
+    color: var(--clr-base);
+    background-color: var(--clr-secondary-400);
+    transition: all var(--animation-350);
+  }
+
+  .nav-item.active:hover,
+  .nav-item.active:focus {
+    color: var(--clr-secondary-400);
+    background-color: var(--clr-secondary-300);
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 0.5em 1.5em;
+    cursor: pointer;
+  }
+
+  .nav-link > * + * {
+    margin-left: 1rem;
+  }
+}

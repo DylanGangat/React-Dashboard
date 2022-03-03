@@ -1,15 +1,29 @@
 .primary-header {
-  padding: 1rem 0;
-  border-bottom: 1px solid red;
+  padding: 0.5rem 1.5rem;
+  border-bottom: 1px solid var(--clr-grey-400);
+
+  @media (min-width: 50em) {
+    padding: 0.5rem 2rem;
+  }
 
   .main-nav {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 1em;
+
+    @media (min-width: 30em) {
+      justify-content: space-between;
+    }
   }
 
   .logo {
-    height: 2rem;
+    height: 1.5rem;
+
+    @media (min-width: 50em) {
+      height: 1.8rem;
+    }
   }
 
   .user-info {
@@ -17,24 +31,58 @@
     align-items: center;
   }
 
-  .alert-icon {
-    padding-right: 1.5rem;
-    // border-right: 1px solid red;
+  // So that I can place the circle relative to the icon
+  .notification {
+    position: relative;
+    cursor: pointer;
+    transition: transform var(--animation-350);
+  }
+
+  .notification:hover,
+  .notification:focus {
+    transform: rotate(15deg);
+  }
+
+  // Creating the cricle to go above the icon
+  .notification::after {
+    content: "";
+    position: absolute;
+    height: 0.45rem;
+    width: 0.45rem;
+    top: 10%;
+    right: 11%;
+    border-radius: 50%;
+    background-color: var(--clr-secondary-400);
   }
 
   .user-profile {
     display: flex;
     align-items: center;
-    padding-left: 1.5rem;
-    border-left: 1px solid red;
+    // Spread the padding between this and the nav inorder to get a longer left border with spacing between the nav bottom border.
+    padding: 1rem 0 1rem 1rem;
+    border-left: 2px solid var(--clr-grey-300);
+    @media (min-width: 50em) {
+      padding: 1rem 0 1rem 2rem;
+    }
   }
+
+  // Needed to space between the icon from the user-profile
+
+  .user-profile {
+    margin-left: 1rem;
+
+    @media (min-width: 50em) {
+      margin-left: 2rem;
+    }
+  }
+
   .user-profile > * + * {
-      margin-left: .5rem;
+    margin-left: 0.5rem;
   }
 
   .profile-image {
-    height: 2.5rem;
-    width: 2.5rem;
+    height: 3rem;
+    width: 3rem;
     border-radius: 50%;
     object-fit: cover;
   }
@@ -42,5 +90,26 @@
   .user-details {
     display: flex;
     align-items: center;
+  }
+
+  .name {
+    font-weight: var(--fw-700);
+  }
+
+  .email {
+    font-size: var(--text-sm);
+    color: var(--clr-secondary-400);
+  }
+
+  .down-arrow {
+    margin-left: 0.5rem;
+    cursor: pointer;
+    transition: all var(--animation-350);
+  }
+
+  .down-arrow:hover,
+  .down-arrow:focus {
+    color: var(--clr-secondary-400);
+    transform: rotate(180deg);
   }
 }

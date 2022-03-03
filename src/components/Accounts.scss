@@ -1,0 +1,37 @@
+.accounts {
+  --flow-spacer: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 22rem));
+  gap: .5rem;
+  padding: 1.5rem;
+  background-color: var(--clr-grey-300);
+  border-bottom: 1px solid var(--clr-border);
+
+  .account {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: var(--clr-base); 
+    border-radius: var(--border-radius);
+    border: 1px solid var(--clr-border);
+  }
+
+  .account.active {
+    background-color: var(--clr-secondary-300); // active
+    border: 1px solid var(--clr-secondary-400); // active
+  }
+
+  .details {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .name {
+    color: var(--clr-secondary-400);
+    font-weight: var(--fw-500);
+  }
+
+  .id {
+    font-size: var(--text-sm);
+  }
+}

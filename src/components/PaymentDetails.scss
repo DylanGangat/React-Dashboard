@@ -1,0 +1,59 @@
+.payment-details {
+  background-color: var(--clr-base);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--clr-border);
+
+  header {
+    --flow-spacer: 0.5rem;
+    padding: 2rem 1.5rem 1rem;
+    border-bottom: 1px solid var(--clr-border);
+  }
+
+  .invoice-details {
+    padding: 1.5rem;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // max-width: 20.5rem; // MIGHT DELETE THIS LATER FOR THE CARD
+    background-color: var(--clr-grey-300);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .card-price {
+    font-size: var(--text-4xl);
+    font-weight: var(--fw-700);
+    color: var(--clr-primary-300);
+  }
+
+  .card-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    color: var(--clr-primary-300);
+  }
+
+  .lock {
+    color: var(--clr-black);
+  }
+
+  .btn {
+    align-self: flex-start;
+  }
+}

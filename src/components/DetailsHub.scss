@@ -1,0 +1,24 @@
+.details-hub {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem;
+
+  @media (min-width: 62.5em) {
+    // grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+
+    .payment-details {
+      grid-column: span 3;
+    }
+
+    .products {
+      grid-column: span 1;
+      min-width: 18rem;
+    }
+
+    .billing {
+      grid-column: span 4;
+    }
+  }
+}

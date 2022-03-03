@@ -4,8 +4,8 @@ import "./Navbar.scss";
 
 // Images
 
-import Logo from "./assets/bOnline-logo.svg";
-import UserImage from "./assets/person1.jpg";
+import Logo from "../assets/bOnline-logo.svg";
+import UserImage from "../assets/person1.jpg";
 
 // Icons
 
@@ -18,10 +18,13 @@ export default function Navbar() {
       <div className="container">
         <nav className="main-nav">
           <Link to="/">
-            <img src={Logo} alt="bOnline logo" className="logo"/>
+            <img src={Logo} alt="bOnline logo" className="logo" />
           </Link>
           <div className="user-info">
-            <NotificationsNoneOutlinedIcon className="alert-icon text-accent" />
+            <div className="notification">
+              <NotificationsNoneOutlinedIcon className="icon" size="xl" />
+            </div>
+
             <div className="user-profile">
               <img
                 src={UserImage}
@@ -30,10 +33,10 @@ export default function Navbar() {
               />
               <div className="user-details">
                 <div>
-                  <p>Ruth Sage</p>
-                  <p>ruthsage@bonline.com</p>
+                  <p className="name">Ruth Sage</p>
+                  <p className="email">ruthsage@bonline.com</p>
                 </div>
-                <KeyboardArrowDownRoundedIcon />
+                <KeyboardArrowDownRoundedIcon className="down-arrow"/>
               </div>
             </div>
           </div>
