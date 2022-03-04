@@ -13,8 +13,15 @@
     justify-content: center;
     gap: 1em;
 
-    @media (min-width: 30em) {
+    @media (min-width: 32em) {
       justify-content: space-between;
+    }
+  }
+
+  .main-nav a {
+    padding-top: 1rem;
+    @media (min-width: 31.56em) {
+      padding-top: 0;
     }
   }
 
@@ -34,6 +41,7 @@
   // So that I can place the circle relative to the icon
   .notification {
     position: relative;
+    display: flex;
     cursor: pointer;
     transition: transform var(--animation-350);
   }
@@ -59,19 +67,12 @@
     display: flex;
     align-items: center;
     // Spread the padding between this and the nav inorder to get a longer left border with spacing between the nav bottom border.
-    padding: 1rem 0 1rem 1rem;
+    padding: 1rem 0 1rem 0.5rem;
+    margin-left: 0.5rem;
     border-left: 2px solid var(--clr-grey-300);
+
     @media (min-width: 50em) {
       padding: 1rem 0 1rem 2rem;
-    }
-  }
-
-  // Needed to space between the icon from the user-profile
-
-  .user-profile {
-    margin-left: 1rem;
-
-    @media (min-width: 50em) {
       margin-left: 2rem;
     }
   }
