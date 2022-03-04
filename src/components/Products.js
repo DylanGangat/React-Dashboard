@@ -1,13 +1,29 @@
 // Styles
 import "./Products.scss";
 
+// hooks
+import useFetch from "../hooks/useFetch";
+
 // Icons
 
 import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined";
 import LaptopOutlinedIcon from "@mui/icons-material/LaptopOutlined";
 import CallSplitOutlinedIcon from "@mui/icons-material/CallSplitOutlined";
 
-export default function Products() {
+export default function Products({ url }) {
+  const { data } = useFetch(url);
+
+  // So I can return the icon that matches with the product
+  const productIcon = name => {
+    if (name === "TELCO") {
+      return <PhoneOutlinedIcon />;
+    } else if (name === "VOIP") {
+      return <CallSplitOutlinedIcon />;
+    } else {
+      return <LaptopOutlinedIcon />;
+    }
+  };
+
   return (
     <section className="col-2 products">
       <header className="flow-content">
@@ -16,23 +32,15 @@ export default function Products() {
       </header>
 
       <div className="product-info">
-        {/* product 1 */}
-        <div>
-          <PhoneOutlinedIcon />
-          <p>VolP - 901515154</p>
-        </div>
-
-        {/* product 2 */}
-        <div>
-          <LaptopOutlinedIcon />
-          <p>Fibre - SW29dd</p>
-        </div>
-        
-        {/* product 3 */}
-        <div>
-          <CallSplitOutlinedIcon />
-          <p>Website - www.website.com</p>
-        </div>
+        {data &&
+          data[0].products.map(product => (
+            <div key={product.product_id}>
+              {productIcon(product.product_kind)}
+              <p>
+                {product.product_kind} - {product.product_detail}
+              </p>
+            </div>
+          ))}
       </div>
     </section>
   );

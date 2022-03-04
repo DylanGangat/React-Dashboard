@@ -5,7 +5,23 @@
   padding: 1.5rem;
 
   @media (min-width: 62.5em) {
-    // grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+
+    .payment-details {
+      grid-column: 1 / -1;
+    }
+
+    .products {
+      grid-column: 1 / -1;
+      min-width: 18rem;
+    }
+
+    .billing {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (min-width: 68.75em) {
     grid-template-columns: repeat(4, 1fr);
 
     .payment-details {

@@ -1,28 +1,36 @@
 .accounts {
+  // Changes the margin-top of each child that has a child before from utilities.scss
   --flow-spacer: 0.5rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 22rem));
-  gap: .5rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 17rem));
+  gap: 0.5rem;
   padding: 1.5rem;
   background-color: var(--clr-grey-300);
   border-bottom: 1px solid var(--clr-border);
+  cursor: pointer;
 
   .account {
     width: 100%;
     padding: 0.5rem;
-    background-color: var(--clr-base); 
+    background-color: var(--clr-base);
     border-radius: var(--border-radius);
     border: 1px solid var(--clr-border);
+    box-shadow: var(--box-shadow);
+    transition: all var(--animation-350);
+    display: flex;
+    flex-direction: column;
   }
 
-  .account.active {
-    background-color: var(--clr-secondary-300); // active
-    border: 1px solid var(--clr-secondary-400); // active
+  .account.active,
+  .account:hover,
+  .account:focus {
+    background-color: var(--clr-secondary-300);
+    border: 1px solid var(--clr-secondary-400);
   }
 
   .details {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.5rem;
   }
 

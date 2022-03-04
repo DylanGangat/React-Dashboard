@@ -1,5 +1,5 @@
 .side-bar {
-  color: var(--clr-grey-400);
+  color: var(--clr-grey-500);
 
   @media (min-width: 50em) {
     padding: 1rem;
@@ -7,8 +7,7 @@
 
   .nav-list {
     display: flex;
-    // flex-direction: row;
-    flex-wrap: wrap; // Maybe wont need this because might cause problems on the desktop version
+    flex-wrap: wrap;
     justify-content: center;
 
     @media (min-width: 50em) {

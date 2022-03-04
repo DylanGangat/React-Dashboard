@@ -5,6 +5,7 @@
   // So I can hide any overflow caused by x axis of the table rows
   overflow-x: auto;
   overflow-y: hidden;
+  box-shadow: var(--box-shadow);
 
   header {
     --flow-spacer: 0.5rem;

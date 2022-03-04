@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import useFetch from "../hooks/useFetch";
+
 // Styles
 import "./Navbar.scss";
 
@@ -13,6 +16,9 @@ import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNone
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
 
 export default function Navbar() {
+  const [url, setUrl] = useState("http://localhost:8000/users");
+  const { data } = useFetch(url);
+
   return (
     <header className="primary-header">
       <div className="container">
@@ -25,20 +31,24 @@ export default function Navbar() {
               <NotificationsNoneOutlinedIcon className="icon" size="xl" />
             </div>
 
-            <div className="user-profile">
-              <img
-                src={UserImage}
-                alt="the users profile pic"
-                className="profile-image"
-              />
-              <div className="user-details">
-                <div>
-                  <p className="name">Ruth Sage</p>
-                  <p className="email">ruthsage@bonline.com</p>
+            {data && (
+              <div className="user-profile" key={data[0].account_id}>
+                <img
+                  src={UserImage}
+                  alt="the users profile pic"
+                  className="profile-image"
+                />
+                <div className="user-details">
+                  <div>
+                    <p className="name">{data[0].first_name}</p>
+                    <p className="email">
+                      {data[0].first_name + data[0].last_name + "@bonline.com"}
+                    </p>
+                  </div>
+                  <KeyboardArrowDownRoundedIcon className="down-arrow" />
                 </div>
-                <KeyboardArrowDownRoundedIcon className="down-arrow"/>
               </div>
-            </div>
+            )}
           </div>
         </nav>
       </div>
