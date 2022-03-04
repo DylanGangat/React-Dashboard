@@ -16,7 +16,7 @@ import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNone
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
 
 export default function Navbar() {
-  const [url, setUrl] = useState("http://localhost:8000/users");
+  const url = useState("http://localhost:8000/users");
   const { data } = useFetch(url);
 
   return (
